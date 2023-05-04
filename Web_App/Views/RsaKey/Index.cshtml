@@ -1,0 +1,83 @@
+@model IEnumerable<Domain.RsaKey>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Message)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cypher)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.KeyLength)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PPrime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QPrime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Exponent)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RsaCypher)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.KeySecret)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.User)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Message)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cypher)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KeyLength)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PPrime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QPrime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Exponent)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RsaCypher)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KeySecret)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.User.Id)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
